@@ -57,13 +57,14 @@ trusted_key_servers:
 1. Run image using `podman run -it -p 8448:8448 --rm --mount type=volume,src=synapse-data,dst=/data [IMAGE_ID]`
  - **[IMAGE_ID]** being the IMAGE ID you grabbed before
  - If using troubleshooting settings, use `-p 8008:8008` instead of `-p 8448:8448`
-2. check with your internet browser `https://[SERVER_NAME]:8448` ( or `http://[SERVER_NAME]:8008` if using troubleshooting settings) . Normally a page shoud display indicating the server is up and running.
-3. Go to `https://app.element.io/#/login`.
-4. Change the homeserver from `matrix.org` to `[SERVER_NAME]:8448`. Click continue.
+2. check with your internet browser `https://[SERVER_NAME]:8448` ( or `http://[SERVER_NAME]:8008` if using troubleshooting settings) . 
+3. As the HTTPS certificate is self signed, you have to add exception to visit the site with your browser.Then normally a page shoud display indicating the server is up and running.
+4. Go to `https://app.element.io/#/login`.
+5. Change the homeserver from `matrix.org` to `[SERVER_NAME]:8448`. Click continue.
 At this point the HTML client will make requests to your server so check for errors if the webapp doesn't accept it.
-5. You should see the homeserver updated to `https://[SERVER_NAME]:8448`
-6. Create user/password. Be careful that no limit is yet in place for user to create accounts.Consider editing `enable_registration` and `enable_registration_without_verification` config file fields further.
-7. You should now be connected the server!! :)
+6. You should see the homeserver updated to `https://[SERVER_NAME]:8448`
+7. Create user/password. Be careful that no limit is yet in place for user to create accounts.Consider editing `enable_registration` and `enable_registration_without_verification` config file fields further.
+8. You should now be connected the server!! :)
 
 ## Sources
 - https://github.com/element-hq/synapse
